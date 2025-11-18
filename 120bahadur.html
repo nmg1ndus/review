@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NMG Indus | Review: [Movie/Series Title]</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN for social media icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* 'Inter' font is used by default in Tailwind, ensuring modern readability */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better look in dark mode */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #4b5563; /* Gray-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937; /* Gray-800 */
+        }
+        /* Style for the video container to maintain aspect ratio */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem; /* Rounded corners */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Custom styles for the Source Icons/Logos */
+        .source-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            font-size: 10px;
+            text-align: center;
+        }
+        .icon-youtube { background-color: #ff0000; }
+        .icon-imdb { background-color: #f5c518; color: black; }
+        .icon-x { background-color: #000000; }
+        .icon-news { background-color: #3b82f6; } /* Blue */
+        .icon-public { background-color: #ec4899; } /* Pink */
+        .icon-full { background-color: #10b981; } /* Green */
+    </style>
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0f172a', /* Slate-900 */
+                        'accent': '#14b8a6', /* Teal-500 */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-primary-dark text-gray-100 min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-10 shadow-xl border-b border-accent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo and Channel Name -->
+            <div class="flex items-center space-x-3">
+                <img src="https://nondescriptmg.github.io/review/images/logo.png" alt="NMG Indus Logo" class="h-10 w-10 rounded-full object-cover border-2 border-accent">
+                <h1 class="text-3xl font-extrabold tracking-tight text-white">
+                    <span class="text-accent">NMG</span> Indus
+                </h1>
+            </div>
+            
+            <!-- Call to Action Button -->
+            <a href="https://www.youtube.com/@NMGIndus" target="_blank" class="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-primary-dark bg-accent hover:bg-teal-400 transition duration-300 transform hover:scale-105">
+                Subscribe to Our Channel
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Review Title and Metadata (Simplified Heading) -->
+        <section class="mb-10 text-center">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+                NMG Indus: In-Depth Review of <span id="review-movie-title">[Movie/Series Title Here]</span>
+            </h2>
+            <p class="mt-3 text-lg text-gray-400">
+                Review Date: <span id="review-date">November 18, 2025</span> | Category: <span id="category">Bollywood Movie</span>
+            </p>
+        </section>
+
+        <!-- Video Player / Thumbnail -->
+        <section class="mb-12">
+            <h3 class="text-2xl font-bold mb-4 text-accent border-l-4 border-accent pl-3">Watch the Review</h3>
+            <div class="video-container shadow-2xl shadow-accent/20">
+                <iframe 
+                    id="youtube-player"
+                    <a href="https://youtu.be/Rh_g8yHkBpQ?si=wC1oO19y8W7hQOkh">
+                    src="https://nondescriptmg.github.io/review/images/120bahadur.png" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                    </a>
+                </iframe>
+            </div>
+        </section>
+        
+        <!-- Review Description / Summary (Rating removed) -->
+        <section class="mb-12 p-6 bg-gray-800 rounded-xl shadow-inner border border-gray-700">
+            <h3 class="text-2xl font-bold mb-4 text-white border-b border-accent/50 pb-2">Review Summary</h3>
+            
+            <p id="review-description" class="text-gray-300 leading-relaxed text-lg">
+                This review is an in-depth analysis of the artistic and technical aspects of [Movie/Series Title]. We have highlighted all the points that affect the audience's experience, including the quality of acting, deficiencies in the screenplay, and the originality of the direction. This commentary is made in the "public interest" while maintaining impartiality and critical distance.
+                <br><br>
+                **This content is created strictly for the purposes of criticism, commentary, education, and reporting.**
+            </p>
+        </section>
+
+        <!-- CRITICAL SECTION: Sources and Fair Use Declaration (The Evidence Dashboard) -->
+        <section class="mb-12 p-8 bg-gray-900 rounded-2xl border-4 border-red-500 shadow-2xl shadow-red-500/20">
+            <h3 class="text-3xl font-extrabold mb-6 text-red-400 flex items-center">
+                <i data-lucide="gavel" class="w-7 h-7 mr-3"></i>
+                Evidence Dashboard: Sources & Fair Use Declaration
+            </h3>
+            
+            <p class="text-gray-200 mb-6 font-semibold border-b border-gray-700 pb-4">
+                This critical review is based on extensive research using the 15-20 sources listed below. This content is used under the **Fair Use** provisions (U.S. Copyright Act, Section 107) for criticism, commentary, and reporting, ensuring all claims are fact-checked against public and verifiable data.
+            </p>
+
+            <div id="source-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Sources will be rendered here by JavaScript -->
+            </div>
+            <p id="no-sources-message" class="text-gray-500 text-center py-8 hidden">No sources added yet. Please update the `sources` array in the script.</p>
+        </section>
+        
+    </main>
+    
+    <!-- Footer / Social Media Links -->
+    <footer class="bg-gray-800 border-t border-accent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center">
+            
+            <p class="text-gray-400 mb-4 md:mb-0">
+                © <span id="current-year">2025</span> NMG Indus. All rights reserved.
+            </p>
+
+            <!-- Social Links -->
+            <div class="flex space-x-6">
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@NMGIndus" target="_blank" class="text-gray-400 hover:text-red-600 transition duration-300 transform hover:scale-110" aria-label="YouTube">
+                    <i data-lucide="youtube" class="w-6 h-6"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/nondescriptmg/" target="_blank" class="text-gray-400 hover:text-pink-500 transition duration-300 transform hover:scale-110" aria-label="Instagram">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/nmgindus/" target="_blank" class="text-gray-400 hover:text-blue-600 transition duration-300 transform hover:scale-110" aria-label="Facebook">
+                    <i data-lucide="facebook" class="w-6 h-6"></i>
+                </a>
+                <!-- X (Twitter) -->
+                <a href="https://x.com/NMGSTUDI0" target="_blank" class="text-gray-400 hover:text-black hover:bg-white rounded transition duration-300 transform hover:scale-110" aria-label="X (Twitter)">
+                    <i data-lucide="twitter" class="w-6 h-6"></i>
+                </a>
+                <!-- Discord -->
+                <a href="https://discord.gg/rRpMsGbj" target="_blank" class="text-gray-400 hover:text-indigo-500 transition duration-300 transform hover:scale-110" aria-label="Discord">
+                    <i data-lucide="message-square" class="w-6 h-6"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Functionality and Content Filling -->
+    <script>
+        lucide.createIcons();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- CONTENT FILLING (EDITABLE TEMPLATE VARIABLES) ---
+        
+        // 1. YouTube Video ID 
+        const youtubeVideoId = 'YOUR_VIDEO_ID'; 
+        document.getElementById('youtube-player').src = `https://www.youtube.com/embed/${youtubeVideoId}?autoplay=0&rel=0`;
+
+        // 2. Review Details
+        const movieTitle = 'Dunki'; 
+        const reviewDate = 'December 22, 2025';
+        const reviewCategory = 'Social Comedy-Drama';
+        
+        document.getElementById('review-movie-title').textContent = `${movieTitle}`;
+        document.getElementById('review-date').textContent = reviewDate;
+        document.getElementById('category').textContent = reviewCategory;
+
+        // 3. Review Description (Longer summary)
+        document.getElementById('review-description').innerHTML = `
+            The review of ${movieTitle} scrutinizes its ambitious blend of comedy and social commentary. While the first half excels with sharp writing and emotional depth, the second half suffers from narrative fatigue and repetitive plot points. The film's message is powerful, but its execution is inconsistent. The acting ensemble delivers powerful performances, but the pacing needed tighter editing.
+            <br><br>
+            **This review is published by 'NMG Indus' as fair commentary and criticism.**
+        `;
+
+        // 4. Sources Data (The structured array for the Evidence Dashboard)
+        const sources = [
+            // Mandatory Film Sources
+            { type: 'TRAILER', title: 'Official Trailer #1 (Main Source)', url: 'https://www.youtube.com/watch?v=TRAILER_ID_1' },
+            { type: 'FULL_MOVIE', title: 'Full Movie - Netflix Stream Check', url: 'https://www.netflix.com/watch/dunki' },
+            { type: 'TRAILER', title: 'Teaser Trailer Analysis', url: 'https://www.youtube.com/watch?v=TEASER_ID' },
+
+            // Rating & Data Sources
+            { type: 'RATING', title: 'IMDb User Rating (7.8/10)', url: 'https://www.imdb.com/title/tt25528340/' },
+            { type: 'RATING', title: 'Rotten Tomatoes Critical Score (65%)', url: 'https://www.rottentomatoes.com/m/dunki' },
+            { type: 'RATING', title: 'BookMyShow User Score (91%)', url: 'https://in.bookmyshow.com/dunki' },
+
+            // Public & Social Sources
+            { type: 'SOCIAL', title: 'X (Twitter) - Trending Hashtag Analysis', url: 'https://twitter.com/search?q=%23Dunkifails' },
+            { type: 'SOCIAL', title: 'Reddit Discussion Thread (r/Bollywood)', url: 'https://www.reddit.com/r/bollywood/comments/dunki_review/' },
+            { type: 'PUBLIC', title: 'Mall Exit Poll Reaction (YouTube Short)', url: 'https://www.youtube.com/shorts/PUBLIC_REACTION_ID' },
+            { type: 'PUBLIC', title: 'Local Press Audience Feedback', url: 'https://localpaper.com/dunki-audience-survey' },
+
+            // News & Production Sources
+            { type: 'NEWS', title: 'Box Office India Day 1 Collection Report', url: 'https://www.boxofficeindia.com/report/dunki-d1' },
+            { type: 'NEWS', title: 'Director Rajkumar Hirani Interview (TOI)', url: 'https://timesofindia.indiatimes.com/rajkumar-hirani-interview' },
+            { type: 'NEWS', title: 'Trade Analyst Komal Nahta Report', url: 'https://koimoi.com/komal-nahta-dunki-review/' },
+            
+            // Add more sources (up to 20 or more) here following the structure...
+            { type: 'NEWS', title: 'VFX Breakdown Article', url: 'https://vfxworld.com/dunki-vfx-review' },
+            { type: 'PUBLIC', title: 'Instagram Reaction Reel Compilation', url: 'https://www.instagram.com/reel/INSTA_REEL_ID' },
+        ];
+        
+        // --- Source Rendering Logic ---
+        function getSourceIcon(type) {
+            let iconClass = '';
+            let lucideIcon = 'link';
+
+            switch (type) {
+                case 'TRAILER':
+                    iconClass = 'icon-youtube';
+                    lucideIcon = 'clapperboard';
+                    break;
+                case 'FULL_MOVIE':
+                    iconClass = 'icon-full';
+                    lucideIcon = 'video';
+                    break;
+                case 'RATING':
+                    iconClass = 'icon-imdb';
+                    lucideIcon = 'star';
+                    break;
+                case 'SOCIAL':
+                    iconClass = 'icon-x';
+                    lucideIcon = 'message-square';
+                    break;
+                case 'NEWS':
+                    iconClass = 'icon-news';
+                    lucideIcon = 'newspaper';
+                    break;
+                case 'PUBLIC':
+                    iconClass = 'icon-public';
+                    lucideIcon = 'users';
+                    break;
+                default:
+                    iconClass = 'bg-gray-600';
+                    lucideIcon = 'link';
+            }
+            // Return HTML structure for the icon
+            return `<div class="source-icon ${iconClass}" title="${type}"><i data-lucide="${lucideIcon}" class="w-4 h-4 text-white"></i></div>`;
+        }
+
+        function renderSources() {
+            const sourceListElement = document.getElementById('source-list');
+            sourceListElement.innerHTML = '';
+            
+            if (sources.length === 0) {
+                document.getElementById('no-sources-message').classList.remove('hidden');
+                return;
+            }
+
+            sources.forEach((source, index) => {
+                const sourceCard = document.createElement('div');
+                sourceCard.className = 'bg-gray-800 p-4 rounded-lg shadow-xl hover:shadow-2xl hover:bg-gray-700 transition duration-300 transform hover:scale-[1.02] border border-gray-700';
+
+                const iconHtml = getSourceIcon(source.type);
+                
+                sourceCard.innerHTML = `
+                    <div class="flex items-start mb-2 space-x-3">
+                        ${iconHtml}
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-400 uppercase font-semibold">${source.type.replace('_', ' ')} #${index + 1}</p>
+                            <p class="text-lg font-bold text-white leading-tight">${source.title}</p>
+                        </div>
+                    </div>
+                    <a href="${source.url}" target="_blank" class="text-teal-400 hover:text-teal-300 text-sm truncate block mt-2">
+                        ${source.url.substring(0, 50)}...
+                    </a>
+                `;
+                sourceListElement.appendChild(sourceCard);
+            });
+            lucide.createIcons(); // Re-initialize icons after rendering
+        }
+
+        // Run functions on load
+        window.onload = function() {
+            renderSources();
+        };
+
+    </script>
+</body>
+</html>
